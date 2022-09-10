@@ -48,34 +48,34 @@ print("Moves are F for forward move ")
 print("Moves are B for backward move ")
 game_playing = 0
 while game_playing < 1:
-    a_move = input(player_1+"'s Move (character:Move)").split(":")
-    a_char = "A-"+a_move[0]
+    a_move = input(player_1 + "'s Move (character:Move)").split(":")
+    a_char = "A-" + a_move[0]
     position_a = pos_a[a_char]
     i = position_a[0]
     j = position_a[1]
     if a_move[1] == "L":
-        if board[i][j-1] == "-":
-            board[i][j-1] = a_char
+        if board[i][j - 1] == "-":
+            board[i][j - 1] = a_char
             board[i][j] = "-"
-            pos_a[a_char] = [i,j-1]
+            pos_a[a_char] = [i, j - 1]
     elif a_move[1] == "R":
         if board[i][j + 1] == "-":
             board[i][j + 1] = a_char
             board[i][j] = "-"
             pos_a[a_char] = [i, j + 1]
     elif a_move[1] == "F":
-        if board[i-1][j] == "-":
-            board[i-1][j] = a_char
+        if board[i - 1][j] == "-":
+            board[i - 1][j] = a_char
             board[i][j] = "-"
-            pos_a[a_char] = [i-1, j]
+            pos_a[a_char] = [i - 1, j]
     elif a_move[1] == "B":
-        if board[i+1][j] == "-":
-            board[i+1][j] = a_char
+        if board[i + 1][j] == "-":
+            board[i + 1][j] = a_char
             board[i][j] = "-"
-            pos_a[a_char] = [i+1, j]
+            pos_a[a_char] = [i + 1, j]
     print_board(board)
-    b_move = input(player_2+"'s Move (character:Move)").split(":")
-    b_char = "B-"+b_move[0]
+    b_move = input(player_2 + "'s Move (character:Move)").split(":")
+    b_char = "B-" + b_move[0]
     position_b = pos_b[b_char]
     i = position_b[0]
     j = position_b[1]
@@ -83,20 +83,20 @@ while game_playing < 1:
         if board[i][j + 1] == "-":
             board[i][j + 1] = b_char
             board[i][j] = "-"
-            pos_b[b_char] = [i,j+1]
+            pos_b[b_char] = [i, j + 1]
     elif b_move[1] == "R":
         if board[i][j - 1] == "-":
             board[i][j - 1] = b_char
             board[i][j] = "-"
-            pos_b[b_char] = [i, j -1]
+            pos_b[b_char] = [i, j - 1]
     elif b_move[1] == "F":
-        if board[i+1][j] == "-":
-            board[i+1][j] = b_char
+        if board[i + 1][j] == "-":
+            board[i + 1][j] = b_char
             board[i][j] = "-"
-            pos_b[b_char] = [i+1, j]
+            pos_b[b_char] = [i + 1, j]
     elif b_move[1] == "B":
-        if board[i-1][j] == "-":
-            board[i-1][j] = b_char
+        if board[i - 1][j] == "-":
+            board[i - 1][j] = b_char
             board[i][j] = "-"
-            pos_b[b_char] = [i-1, j]
+            pos_b[b_char] = [i - 1, j]
     print_board(board)
