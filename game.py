@@ -11,24 +11,34 @@ print("Empty Board")
 print_board(board)
 
 player_1 = input("\nEnter Player 1 Name: ")
-player_1_char = list(input("Enter 5 characters of player 1 seperated by , : ").split(","))
 pos_a = {}
-if len(player_1_char) == 5:
-    for i in range(5):
-        char_name = "A-"+player_1_char[i]
-        board[4][i] = char_name
-        pos_a[char_name] = [4,i]
+player_1_input = True
+while player_1_input:
+    player_1_char = list(input("Enter 5 characters of player 1 seperated by , : ").split(","))
+    if len(player_1_char) == 5:
+        player_1_input = False
+        for i in range(5):
+            char_name = "A-" + player_1_char[i]
+            board[4][i] = char_name
+            pos_a[char_name] = [4, i]
+    else:
+        print("Wrong Input please re-enter")
 
 print_board(board)
 
 player_2 = input("Enter Player 2 Name: ")
-player_2_char = list(input("Enter 5 characters of player 1 seperated by , : ").split(","))
 pos_b = {}
-if len(player_1_char) == 5:
-    for i in range(5):
-        char_name = "B-"+player_1_char[i]
-        board[0][i] = char_name
-        pos_b[char_name] = [0, i]
+player_2_input = True
+while player_2_input:
+    player_2_char = list(input("Enter 5 characters of player 2 seperated by , : ").split(","))
+    if len(player_2_char) == 5:
+        player_2_input = False
+        for i in range(5):
+            char_name = "B-" + player_2_char[i]
+            board[0][i] = char_name
+            pos_b[char_name] = [0, i]
+    else:
+        print("Wrong Input please re-enter")
 
 print_board(board)
 
